@@ -6,9 +6,18 @@ This test is designed to evaluate front-end development skills including HTML, C
 ## Instructions
 1. Complete all tasks in the order provided
 2. Document your approach and reasoning for each task
-3. Fix any intentional errors you encounter
+3. Fix any errors you encounter
 4. Provide time estimates for each section
 5. Show your work and thought process
+6. **Complete all proof of work sections** in each task file
+7. **Commit your changes** to the repository after each task
+8. **Push your final work** to the remote repository
+
+## Repository Workflow
+- **Create a feature branch** for your work: `git checkout -b feature/candidate-solutions`
+- **Commit after each task**: `git add . && git commit -m "Task X: [Description]"`
+- **Push your work**: `git push origin feature/candidate-solutions`
+- **Create a pull request** with your solutions
 
 ## Test Structure
 - **Task 1**: HTML/CSS/JS Fundamentals (20 minutes)
@@ -34,82 +43,8 @@ Create a responsive card component with the following specifications:
 - Use semantic HTML5 elements
 - Make it responsive (mobile-first approach)
 
-### Intentional Errors to Fix
-The provided code contains several intentional errors. Identify and fix them:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Component</title>
-    <style>
-        .card {
-            width: 300px;
-            height: 200px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .card-header {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .card-body {
-            margin-bottom: 15px;
-        }
-        
-        .card-footer {
-            text-align: center;
-        }
-        
-        .toggle-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .card {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <div class="card-header">Sample Card</div>
-        <div class="card-body">This is the card content. It should be responsive and have proper hover effects.</div>
-        <div class="card-footer">
-            <button class="toggle-btn" onclick="toggleCard()">Toggle Card</button>
-        </div>
-    </div>
-
-    <script>
-        function toggleCard() {
-            const card = document.querySelector('.card');
-            card.style.display = card.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
-</body>
-</html>
-```
+### Task Description
+Create a responsive card component with the provided code in `task1-html-css-js.html`. The code contains several issues that need to be identified and fixed.
 
 ### Questions to Answer:
 1. Identify at least 3 errors in the provided code
@@ -129,83 +64,8 @@ Create a TypeScript interface and class for a User Management system with the fo
 - Error handling with custom error types
 - Generic type for API responses
 
-### Code with Intentional Errors:
-```typescript
-interface User {
-    id: number;
-    name: string;
-    email: string;
-    age?: number;
-    isActive: boolean;
-}
-
-interface ApiResponse<T> {
-    data: T;
-    success: boolean;
-    message?: string;
-}
-
-class UserService {
-    private users: User[] = [];
-    
-    createUser(userData: User): ApiResponse<User> {
-        if (!userData.email || !userData.name) {
-            throw new Error('Name and email are required');
-        }
-        
-        const newUser = {
-            ...userData,
-            id: this.users.length + 1
-        };
-        
-        this.users.push(newUser);
-        
-        return {
-            data: newUser,
-            success: true,
-            message: 'User created successfully'
-        };
-    }
-    
-    getUserById(id: number): User {
-        const user = this.users.find(u => u.id === id);
-        if (!user) {
-            throw new Error('User not found');
-        }
-        return user;
-    }
-    
-    updateUser(id: number, updates: Partial<User>): ApiResponse<User> {
-        const userIndex = this.users.findIndex(u => u.id === id);
-        if (userIndex === -1) {
-            throw new Error('User not found');
-        }
-        
-        this.users[userIndex] = { ...this.users[userIndex], ...updates };
-        
-        return {
-            data: this.users[userIndex],
-            success: true,
-            message: 'User updated successfully'
-        };
-    }
-    
-    deleteUser(id: number): ApiResponse<boolean> {
-        const userIndex = this.users.findIndex(u => u.id === id);
-        if (userIndex === -1) {
-            throw new Error('User not found');
-        }
-        
-        this.users.splice(userIndex, 1);
-        
-        return {
-            data: true,
-            success: true,
-            message: 'User deleted successfully'
-        };
-    }
-}
-```
+### Task Description
+Create a TypeScript interface and class for a User Management system using the provided code in `task2-typescript.ts`. The code contains several TypeScript issues that need to be identified and fixed.
 
 ### Questions to Answer:
 1. Identify TypeScript errors and type safety issues
@@ -225,63 +85,8 @@ Convert the following CSS to SCSS with:
 - Responsive breakpoints
 - Component-based structure
 
-### CSS to Convert:
-```css
-.navbar {
-    background-color: #333;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-brand {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.navbar-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-nav li {
-    margin-left: 2rem;
-}
-
-.navbar-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-nav a:hover {
-    background-color: #555;
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-    
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-    }
-    
-    .navbar-nav li {
-        margin: 0.5rem 0;
-    }
-}
-```
+### Task Description
+Convert the provided CSS code in `task3-scss.scss` to proper SCSS with variables, mixins, and nesting.
 
 ### Questions to Answer:
 1. Create SCSS variables for colors and spacing
@@ -295,48 +100,20 @@ Convert the following CSS to SCSS with:
 **Time Limit: 10 minutes**
 
 ### Scenario
-You're on a feature branch `feature/user-authentication`. The `main` branch has new commits. Bring those changes into your branch and push.
+You're working on a feature branch for a web application. Your team lead has informed you that there are new commits on the `main` branch that you need to incorporate into your feature branch before submitting your pull request.
 
-### Tasks (Basics Only)
+### Task Description
+Follow the Git workflow scenario described in `task4-git-scenario.md` to merge main branch changes into your feature branch and handle any potential conflicts. Complete the 3 example tasks provided.
 
-1) Check your branch and status
-```bash
-git branch --show-current
-git status
-```
+### Example Tasks to Complete
+1. **Branch Management**: Create and switch to a new feature branch
+2. **Commit History**: View commit history and create new commits
+3. **Merge Conflict Resolution**: Handle merge conflicts in files
 
-2) Get latest `main`
-```bash
-git fetch origin
-git log --oneline -3 origin/main
-```
-
-3) Merge `main` into your branch
-```bash
-git merge origin/main
-```
-
-If there is a conflict, you'll see markers like this in a file (example):
-```txt
-<<<<<<< HEAD
-Your change here
-=======
-Change from main here
->>>>>>> origin/main
-```
-Keep the correct lines, remove the markers, and save the file.
-
-4) Commit and push
-```bash
-git add -A
-git commit -m "Merge origin/main into feature/user-authentication"
-git push origin feature/user-authentication
-```
-
-### Short Questions
-1) In one sentence, what does `git fetch` do?
-2) In one sentence, what does `git merge origin/main` do while on your feature branch?
-3) If `git push` is rejected because remote has new commits, what basic command can you run before trying to push again?
+### Questions to Answer
+1) What does `git fetch` do and why is it important before merging?
+2) What is the difference between `git merge` and `git rebase`?
+3) If your push is rejected because the remote branch has new commits, what would you do?
 
 ---
 
@@ -369,54 +146,8 @@ Design a login form with the following specifications:
 ## Task 6: Problem Solving & Debugging
 **Time Limit: 10 minutes**
 
-### Debugging Challenge
-The following code has multiple issues. Identify and fix them:
-
-```javascript
-function calculateTotal(items) {
-    let total = 0;
-    for (let i = 0; i <= items.length; i++) {
-        total += items[i].price * items[i].quantity;
-    }
-    return total;
-}
-
-function processUserData(users) {
-    return users.map(user => {
-        return {
-            name: user.name.toUpperCase(),
-            email: user.email.toLowerCase(),
-            age: user.age,
-            isAdult: user.age > 18
-        };
-    });
-}
-
-function fetchUserData(userId) {
-    fetch(`/api/users/${userId}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            return data;
-        });
-}
-
-// Usage
-const items = [
-    { price: 10, quantity: 2 },
-    { price: 15, quantity: 1 },
-    { price: 20, quantity: 3 }
-];
-
-const users = [
-    { name: 'John', email: 'JOHN@EXAMPLE.COM', age: 25 },
-    { name: 'Jane', email: 'jane@example.com', age: 17 }
-];
-
-console.log(calculateTotal(items));
-console.log(processUserData(users));
-fetchUserData(123);
-```
+### Task Description
+Debug the JavaScript code provided in `task6-debugging.js`. The code contains multiple issues that need to be identified and fixed.
 
 ### Questions to Answer:
 1. Identify all bugs in the code
@@ -432,15 +163,8 @@ fetchUserData(123);
 ### Scenario
 You are tasked with planning a front-end e‑commerce dashboard build. Provide realistic time estimates and an implementation plan.
 
-### What to Produce
-1. Break down the project into major tasks with estimates, dependencies, and risks
-2. Justify tech choices (state management, styling, charting, testing, build tool)
-3. Define phased implementation (MVP → advanced → polish/testing)
-4. Identify risks and mitigations
-5. Outline a quality plan (code quality, testing, performance, accessibility)
-
-### Tip
-You can use `task7-estimation.md` as your worksheet/template.
+### Task Description
+Complete the project estimation and planning exercise described in `task7-estimation.md`. Provide realistic time estimates and implementation plans for the e-commerce dashboard project.
 
 ---
 
@@ -483,8 +207,36 @@ Please record the time spent on each task:
 
 **Total Time: ___ minutes**
 
+## Proof of Work Requirements
+
+### For Each Task, You Must Provide:
+1. **Complete the proof sections** in each task file
+2. **Test your solutions** to ensure they work
+3. **Commit your changes** with descriptive messages
+4. **Push to repository** when complete
+
+### Documentation Standards:
+- **Fill out all checklists** in task files
+- **Test all solutions** before submitting
+- **Use clear commit messages** describing changes
+- **Follow Git best practices** for commits
+
+## Final Submission Requirements
+
+### Before Submitting:
+1. **Complete all tasks** with proof sections filled out
+2. **Test all solutions** to ensure they work
+3. **Commit all changes** with descriptive messages
+4. **Push to repository** and create pull request
+
+### Pull Request Requirements:
+- **Title**: "Front-end Developer Test - [Your Name]"
+- **Description**: Summary of all tasks completed
+
 ## Additional Notes
 - Show your work and thought process
 - Explain your approach for each task
 - Document any assumptions made
 - Provide alternative solutions where applicable
+- **Complete all proof of work sections** in each task file
+- **Follow Git best practices** for commits and pull requests

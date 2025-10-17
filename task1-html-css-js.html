@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Component - Task 1</title>
     <style>
-        /* Intentional errors in this CSS - candidates need to identify and fix */
         .card {
             width: 300px;
             height: 200px;
@@ -15,29 +14,24 @@
             margin: 20px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            /* Missing transition property for smooth hover effect */
         }
         
         .card:hover {
             transform: scale(1.05);
-            /* Transition should be on the base class, not hover */
         }
         
         .card-header {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 10px;
-            /* Missing semantic HTML structure */
         }
         
         .card-body {
             margin-bottom: 15px;
-            /* Missing proper line-height for readability */
         }
         
         .card-footer {
             text-align: center;
-            /* Missing proper button styling */
         }
         
         .toggle-btn {
@@ -47,24 +41,17 @@
             padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
-            /* Missing focus states for accessibility */
         }
         
-        /* Missing proper responsive design */
         @media (max-width: 768px) {
             .card {
                 width: 100%;
                 margin: 10px 0;
-                /* Missing proper mobile padding */
             }
         }
-        
-        /* Missing focus styles for accessibility */
-        /* Missing proper button hover states */
     </style>
 </head>
 <body>
-    <!-- Missing proper semantic structure -->
     <div class="card">
         <div class="card-header">Sample Card</div>
         <div class="card-body">This is the card content. It should be responsive and have proper hover effects.</div>
@@ -74,16 +61,35 @@
     </div>
 
     <script>
-        // Intentional JavaScript errors
         function toggleCard() {
             const card = document.querySelector('.card');
-            // Missing null check
             card.style.display = card.style.display === 'none' ? 'block' : 'none';
-            // Missing proper accessibility attributes
         }
-        
-        // Missing proper event handling
-        // Missing error handling
     </script>
+
+    <!-- 
+    PROOF OF WORK - Complete the following:
+    
+    1. ERRORS FIXED (List 3 main issues):
+    - Issue 1: 
+    - Issue 2: 
+    - Issue 3: 
+    
+    2. IMPROVEMENTS MADE:
+    - [ ] 
+    - [ ] 
+    - [ ] 
+    - [ ] 
+    - [ ] 
+    
+    3. TESTING:
+    - [ ] 
+    - [ ] 
+    - [ ] 
+    - [ ] 
+    
+    4. GIT COMMIT:
+    - [ ] Committed: git commit -m "Task 1: Fixed HTML/CSS/JS issues"
+    -->
 </body>
 </html>

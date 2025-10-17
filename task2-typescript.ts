@@ -1,35 +1,27 @@
 // TypeScript Challenge - Task 2
-// This file contains intentional errors that candidates need to identify and fix
 
-// Missing proper interface definitions
 interface User {
     id: number;
     name: string;
     email: string;
     age?: number;
     isActive: boolean;
-    // Missing proper validation types
 }
 
-// Missing generic constraints
 interface ApiResponse<T> {
     data: T;
     success: boolean;
     message?: string;
-    // Missing error handling types
 }
 
-// Missing proper error types
 class UserService {
     private users: User[] = [];
     
-    // Missing proper validation
     createUser(userData: User): ApiResponse<User> {
         if (!userData.email || !userData.name) {
             throw new Error('Name and email are required');
         }
         
-        // Missing proper ID generation
         const newUser = {
             ...userData,
             id: this.users.length + 1
@@ -44,7 +36,6 @@ class UserService {
         };
     }
     
-    // Missing proper error handling
     getUserById(id: number): User {
         const user = this.users.find(u => u.id === id);
         if (!user) {
@@ -53,7 +44,6 @@ class UserService {
         return user;
     }
     
-    // Missing proper type safety
     updateUser(id: number, updates: Partial<User>): ApiResponse<User> {
         const userIndex = this.users.findIndex(u => u.id === id);
         if (userIndex === -1) {
@@ -69,7 +59,6 @@ class UserService {
         };
     }
     
-    // Missing proper return type
     deleteUser(id: number): ApiResponse<boolean> {
         const userIndex = this.users.findIndex(u => u.id === id);
         if (userIndex === -1) {
@@ -86,6 +75,25 @@ class UserService {
     }
 }
 
-// Missing proper usage examples
-// Missing error handling examples
-// Missing proper type guards
+// PROOF OF WORK - Complete the following:
+/*
+1. TYPESCRIPT ERRORS FIXED (List 3 main issues):
+- Error 1: 
+- Error 2: 
+- Error 3: 
+
+2. IMPROVEMENTS MADE:
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+
+3. TESTING:
+- [ ] 
+- [ ] 
+- [ ] 
+
+4. GIT COMMIT:
+- [ ] Committed: git commit -m "Task 2: Improved TypeScript code"
+*/
