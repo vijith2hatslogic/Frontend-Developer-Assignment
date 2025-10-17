@@ -1,4 +1,4 @@
-# Front-end Developer Test (Offline)
+# Front-end Developer Assignment
 
 ## Test Overview
 This test is designed to evaluate front-end development skills including HTML, CSS, JavaScript, TypeScript, Git, and problem-solving abilities. The test should be completed within 1 hour without the use of AI tools or external assistance.
