@@ -1,0 +1,70 @@
+// SCSS Challenge - Task 3
+// Convert the following CSS to proper SCSS with variables, mixins, and nesting
+
+// TODO: Create SCSS variables for colors, spacing, and breakpoints
+// TODO: Implement mixins for responsive design
+// TODO: Use proper nesting structure
+// TODO: Add component-based organization
+
+.navbar {
+    background-color: #333;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    margin-left: 2rem;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav li {
+        margin: 0.5rem 0;
+    }
+}
+
+// Additional requirements:
+// 1. Create variables for colors, spacing, and breakpoints
+// 2. Implement a mixin for responsive breakpoints
+// 3. Add proper nesting structure
+// 4. Create a component-based organization
+// 5. Add hover and focus states
+// 6. Implement proper accessibility features
